@@ -1,0 +1,90 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adfanshmeladf"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase2_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase3_password": {
+			"value": ""
+		},
+		"Ls_datalek2_accountKey": {
+			"value": ""
+		},
+		"adls_sink_accountKey": {
+			"value": ""
+		},
+		"ls_filesystem_password": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://anshstorage2025.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"value": "https://anshstorage2025.dfs.core.windows.net/"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "anchserver.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "anchsqldb"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "NOVA-PF4F4508\\mohamed.melaouhia"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_server": {
+			"value": "anchserver.database.windows.net"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_database": {
+			"value": "anchsqldb"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_userName": {
+			"value": "admin007"
+		},
+		"AzureSqlDatabase3_properties_typeProperties_server": {
+			"value": "anchserver.database.windows.net"
+		},
+		"AzureSqlDatabase3_properties_typeProperties_database": {
+			"value": "anchsqldb"
+		},
+		"AzureSqlDatabase3_properties_typeProperties_userName": {
+			"value": "admin007"
+		},
+		"HttpServer1_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/"
+		},
+		"Ls_datalek2_properties_typeProperties_url": {
+			"value": "https://anshstorage2025.dfs.core.windows.net/"
+		},
+		"Ls_restapi_properties_typeProperties_url": {
+			"value": "https://pokeapi.co/api/v2/pokemon"
+		},
+		"adls_sink_properties_typeProperties_url": {
+			"value": "https://anshstorage2025.dfs.core.windows.net/"
+		},
+		"ls_filesystem_properties_typeProperties_host": {
+			"value": "\\\\NOVA-PF4F4508\\adf2025"
+		},
+		"ls_filesystem_properties_typeProperties_userId": {
+			"value": "AzureAD\\MohamedAmineMelaouhi"
+		},
+		"trigger1_properties_scheduled_parameters_schema": {
+			"value": "source"
+		},
+		"trigger1_properties_scheduled_parameters_table": {
+			"value": "Orders"
+		}
+	}
+}
