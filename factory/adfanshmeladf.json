@@ -1,0 +1,9 @@
+{
+	"name": "adfanshmeladf",
+	"location": "canadaeast",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "890b0729-d935-4e21-b4f0-3083d909d6c9",
+		"tenantId": "3fe1223d-8df6-4f14-b18f-08c786fc2956"
+	}
+}

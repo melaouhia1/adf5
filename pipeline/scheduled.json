@@ -1,0 +1,85 @@
+{
+	"name": "scheduled",
+	"properties": {
+		"activities": [
+			{
+				"name": "Execute Pipeline1",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "ingest",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"schema": {
+							"value": "@pipeline().parameters.schema",
+							"type": "Expression"
+						},
+						"table": {
+							"value": "@pipeline().parameters.table",
+							"type": "Expression"
+						},
+						"Backdate": {
+							"value": "@pipeline().parameters.Backdate",
+							"type": "Expression"
+						}
+					}
+				}
+			},
+			{
+				"name": "Web1",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "Execute Pipeline1",
+						"dependencyConditions": [
+							"Failed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "POST",
+					"url": {
+						"value": "https://prod-31.canadaeast.logic.azure.com:443/workflows/1b09a3ab066049369d16603e7499ba0a/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=2TJqKnmqirxHHN1-KprX7g4WPZGtFp7EUpZn_2kT7EI",
+						"type": "Expression"
+					},
+					"body": {
+						"value": "{\n        \"pipeline_name\":\"@{pipeline().Pipeline}\"\n         pipeline_runId:\"@{pipeline().RunId}\"\n        },",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"schema": {
+				"type": "string",
+				"defaultValue": "source"
+			},
+			"table": {
+				"type": "string",
+				"defaultValue": "Orders"
+			},
+			"Backdate": {
+				"type": "string",
+				"defaultValue": "\"\""
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-10-01T17:38:04Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
