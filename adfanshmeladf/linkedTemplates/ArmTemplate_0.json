@@ -557,48 +557,29 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Dimflight')]",
+			"name": "[concat(parameters('factoryName'), '/DelimitedText6')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorage1",
+					"referenceName": "Ls_datalek2",
 					"type": "LinkedServiceReference"
 				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
 					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": "DimFlight.csv",
-						"fileSystem": "bronze"
+						"type": "AzureBlobFSLocation"
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
 					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
-				"schema": [
-					{
-						"name": "flight_id",
-						"type": "String"
-					},
-					{
-						"name": "flight_number",
-						"type": "String"
-					},
-					{
-						"name": "departure_time",
-						"type": "String"
-					},
-					{
-						"name": "arrival_time",
-						"type": "String"
-					}
-				]
+				"schema": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
+				"[concat(variables('factoryId'), '/linkedServices/Ls_datalek2')]"
 			]
 		}
 	]
