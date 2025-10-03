@@ -22,7 +22,7 @@
 							"source1": {
 								"P_container": "source",
 								"P_folder": "files",
-								"P_file": "locations"
+								"P_file": "locations.csv"
 							}
 						}
 					},
